@@ -1,7 +1,3 @@
-
-
-import java.util.Random;
-
 public class HasQuarterState implements State {
 	GumballMachine gumballMachine;
  
@@ -9,8 +5,11 @@ public class HasQuarterState implements State {
 		this.gumballMachine = gumballMachine;
 	}
   
-	public void insertQuarter() {
-		System.out.println("You can't insert another quarter");
+	public void insertQuarter(int coin) {
+		System.out.println("You inserted a coin of value : " + coin);
+		gumballMachine.value = gumballMachine.value + coin;
+		if(gumballMachine.price == gumballMachine.value)
+		gumballMachine.setState(gumballMachine.getHasQuarterState());
 	}
  
 	public void ejectQuarter() {
@@ -30,4 +29,8 @@ public class HasQuarterState implements State {
 	public String toString() {
 		return "waiting for turn of crank";
 	}
+	
+	public void rejectCoin() {
+        System.out.println("Please enter a valid coin. The coin has been ejected");
+    }
 }
