@@ -6,10 +6,7 @@ public class HasQuarterState implements State {
 	}
   
 	public void insertQuarter(int coin) {
-		System.out.println("You inserted a coin of value : " + coin);
-		gumballMachine.value = gumballMachine.value + coin;
-		if(gumballMachine.price == gumballMachine.value)
-		gumballMachine.setState(gumballMachine.getHasQuarterState());
+		System.out.println("You already have sufficient amount :" + gumballMachine.getValue());
 	}
  
 	public void ejectQuarter() {
@@ -29,8 +26,4 @@ public class HasQuarterState implements State {
 	public String toString() {
 		return "waiting for turn of crank";
 	}
-	
-	public void rejectCoin() {
-        System.out.println("Please enter a valid coin. The coin has been ejected");
-    }
 }

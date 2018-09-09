@@ -22,10 +22,6 @@ public class SoldOutState implements State {
 	public void dispense() {
 		System.out.println("No gumball dispensed");
 	}
-	
-	public void rejectCoin() {
-        System.out.println("You can't insert a quarter, the machine is sold out");
-    }
  
 	public String toString() {
 		return "sold out";

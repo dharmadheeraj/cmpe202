@@ -9,29 +9,25 @@ public class NoQuarterState implements State {
  
 	public void insertQuarter(int coin) {
 		System.out.println("You inserted a coin of value : " + coin);
-		gumballMachine.value = gumballMachine.value + coin;
-		if(gumballMachine.price <= gumballMachine.value)
+		gumballMachine.setValue(coin);
+		if(gumballMachine.price <= gumballMachine.getValue())
 		gumballMachine.setState(gumballMachine.getHasQuarterState());
 		else
 			gumballMachine.setState(gumballMachine.getNoQuarterState());
-		System.out.println("You need more value of : " + (gumballMachine.price - gumballMachine.value));
+			//System.out.println("You need more value of : " + (gumballMachine.price - gumballMachine.value));
 	}
  
 	public void ejectQuarter() {
-		System.out.println("You haven't inserted a quarter");
+		System.out.println("You haven't inserted a valid Coin");
 	}
  
 	public void turnCrank() {
-		System.out.println("You turned, but there's no quarter");
+		System.out.println("You turned, but there's no sufficient amount. Please add " +  (gumballMachine.price - gumballMachine.getValue()) + " more and turn the crank");
 	 }
  
 	public void dispense() {
 		System.out.println("You need to pay first");
 	}
-	
-	public void rejectCoin() {
-        System.out.println("Please enter a valid coin. The coin has been ejected");
-    }
  
 	public String toString() {
 		return "waiting for quarter";

@@ -9,7 +9,8 @@ public class GumballMachine {
  
 	State state = soldOutState;
 	int count = 0;
-	int price,coin = 0,value;
+	int price,coin = 0;
+	private int value = 0;
  
 	public GumballMachine(int numberGumballs,int price,int coin) {
 		soldOutState = new SoldOutState(this);
@@ -29,7 +30,7 @@ public class GumballMachine {
 		if((this.coin == coin) || this.coin == 0)
 		state.insertQuarter(coin);
 		else 
-			state.rejectCoin();
+			state.ejectQuarter();
 	}
  
 	public void ejectQuarter() {
@@ -80,6 +81,16 @@ public class GumballMachine {
     public State getSoldState() {
         return soldState;
     }
+    
+    public void setValue(int coin)
+    {
+    	this.value += coin;
+    }
+    
+    public int getValue()
+    {
+    	return this.value;
+    }
  
 	public String toString() {
 		StringBuffer result = new StringBuffer();
@@ -90,6 +101,15 @@ public class GumballMachine {
 			result.append("s");
 		}
 		result.append("\n");
+		result.append("The price of gumball in this machine is " + price + "\n");
+		if(coin==0)
+		{
+			result.append("This Machine accepts any coins.\n");
+		}
+		else
+		{
+			result.append("This machine accepts only " + coin +" coins.");
+		}
 		result.append("Machine is " + state + "\n");
 		return result.toString();
 	}
