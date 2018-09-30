@@ -3,3 +3,5 @@ I felt that this pattern fits for this use case because we can notify a list of 
 
 2) I've used state pattern to set the state of Table class.
 As the tables in the restaurant can have only two defined states, i felt that tis could be the right fit here.
+
+Have attached the CRC diagram as a png.
