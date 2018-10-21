@@ -1,23 +1,26 @@
-public class Premium extends LeafDecorator
-{
-    private String[] options ;
+
+public class Bun  extends LeafDecorator{
+	
+	
+private String[] options ;
     
     
-    public Premium( String d )
+    public Bun( String d )
     {
         super(d) ;
     }
     
- // 2$ extra for marinated Tomatoes
     public void setOptions( String[] options ) 
     {
         this.options = options ;
         		for(int i=0;i<options.length;i++)
         		{
-        			if ( "Marinated Tomatoes.".equals(options[i]) )
-        				this.price += 2.00 ;
-        			else
-        				this.price += 1.00;
+        			if ( "Glutten-Free Bun".equals(options[i]) )
+        				this.price += 1.00 ;
+        			if ( "Hawaiian Bun".equals(options[i]) )
+        				this.price += 1.00 ;
+        			if ( "Pretzel Bun".equals(options[i]) )
+        				this.price += 1.00 ;
         		}
     }
     
@@ -31,5 +34,5 @@ public class Premium extends LeafDecorator
         }        
         return desc ;
     } 
-    
+
 }

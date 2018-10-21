@@ -1,19 +1,19 @@
-public class Cheese extends LeafDecorator
-{
-    private String[] options ;
+
+public class Side extends LeafDecorator{
+	
+private String[] options ;
     
     
-    public Cheese( String d )
+    public Side( String d )
     {
         super(d) ;
     }
     
-    // 1 cheese free, extra cheese +1.00
-    public void setOptions( String[] options )
+    public void setOptions( String[] options ) 
     {
         this.options = options ;
-        if ( options.length > 1 )
-            this.price += (options.length) * 1.00 ;
+        		if(this.options.length > 0)
+        			this.price += this.options.length * 3.00;
     }
     
     public String getDescription() 
@@ -25,6 +25,6 @@ public class Cheese extends LeafDecorator
             else desc = options[i] ;
         }        
         return desc ;
-    }
-    
+    } 
+
 }
