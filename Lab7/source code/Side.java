@@ -12,7 +12,7 @@ private String[] options ;
     public void setOptions( String[] options ) 
     {
         this.options = options ;
-        		if(this.options.length > 0)
+        		if(this.options.length > 1)
         			this.price += this.options.length * 3.00;
     }
     

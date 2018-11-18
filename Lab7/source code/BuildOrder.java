@@ -11,34 +11,37 @@ public class BuildOrder {
         CustomBurger customBurger = new CustomBurger( "Build Your Own Burger" ) ;
         // base price for 1/3 lb
         Burger b = new Burger( "Burger Options" ) ;
-        String[] bo = { "Orgainc Bison*", "1/2lb.", "On A Bun" } ;
+        String[] bo = { "Organic Bison*", "1/2lb.", "On A Bun" } ;
         b.setOptions( bo ) ;
         // 1 cheese free, extra cheese +1.00
         Cheese c = new Cheese( "Cheese Options" ) ;
         String[] co = { "Yellow American", "Spicy Jallepino Jack" } ;
         c.setOptions( co ) ;
         c.wrapDecorator( b ) ;
+        //premiun cheese
+        PremiumCheese pc = new PremiumCheese( "Premium Cheese Options" ) ;
+        String[] pco = { "Danish Blue Cheese"} ;
+        pc.setOptions( pco ) ;
+        pc.wrapDecorator( c ) ;
+        
         //Unlimited
         Toppings t = new Toppings( "Toppings Options" ) ;
         String[] to = { "Bermuda Red Onion", "Black Olives", "Carrot Strings", "Coleslaw" } ;
         t.setOptions( to ) ;
-        t.wrapDecorator( c ) ;
+        t.wrapDecorator( pc ) ;
         //Premium Cheese
-        PremiumCheese pc = new PremiumCheese( "Premium Cheese Options" ) ;
-        String[] pco = { "Danish Blue Cheese"} ;
-        pc.setOptions( pco ) ;
-        pc.wrapDecorator( t ) ;
+        
         // Sauce extra +.50
         Sauce s = new Sauce( "Sauce Options" ) ;
-        String[] so = { "Appricot Sauce" } ;
+        String[] so = { "Thai Peanut Sauce", "Mayoneese"  } ;
         s.setOptions( so ) ;
-        s.wrapDecorator( pc ) ;
+        s.wrapDecorator( t ) ;
         // premium toping +1.50
         Premium p = new Premium( "Premium Options" ) ;
         String[] po = { "Marinated Tomatoes" } ;
         p.setOptions( po ) ;
         p.wrapDecorator( s ) ;
-        //Bun Choice
+       // Bun Choice
         Bun bun = new Bun( "Bun Options" ) ;
         String[] buno = { "Ciabatta(Vegan)" } ;
         bun.setOptions( buno ) ;
@@ -51,7 +54,7 @@ public class BuildOrder {
         
         
         // Setup Custom Burger Ingredients
-        customBurger.setDecorator( s ) ;
+        customBurger.setDecorator( side ) ;
         customBurger.addChild( b ) ;
         customBurger.addChild( c ) ;
         customBurger.addChild( t ) ;

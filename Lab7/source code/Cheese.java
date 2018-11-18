@@ -8,11 +8,11 @@ public class Cheese extends LeafDecorator
         super(d) ;
     }
     
-    // 1 cheese free, extra cheese +1.00
+    // 0 cheese free, extra cheese +1.00
     public void setOptions( String[] options )
     {
         this.options = options ;
-        if ( options.length > 1 )
+        if ( options.length > 0 )
             this.price += (options.length) * 1.00 ;
     }
     

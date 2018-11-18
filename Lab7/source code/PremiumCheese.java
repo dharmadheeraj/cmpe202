@@ -1,4 +1,4 @@
-public class PremiumCheese extends LeafDecorator
+	public class PremiumCheese extends LeafDecorator
 {
     private String[] options ;
     
@@ -14,7 +14,8 @@ public class PremiumCheese extends LeafDecorator
         if ( options.length > 0 )
         {
         	//1.50 for selecting extra cheese and 1.50 per selection
-            this.price += 1.50 + (options.length) * 1.50 ;
+            this.price += 1.50; 
+            this.price +=  (options.length) * 1.50 ;
         }
     }
     
