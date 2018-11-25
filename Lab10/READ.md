@@ -4,13 +4,9 @@
 
 ## Comparision with LAB-1
 
-*
+*In code for Gumball problem using patterns we have used the state pattern to slove the problem which we didn't see in the ocde using FeatureIDE and we can dynamically add any number of possible soutions to the FeatureIDE model.
 
-*
-
-*
-
-*
+*In FeatureIDE code the required methods are weaved before and after depending on the execution of the code and any unnecessary methods are excluded from compilation.
 
 
 ## Combination 1
